@@ -210,7 +210,7 @@
           <configuration>
             <url>http://localhost:8080/manager/text</url>
             <server>tomcat</server>
-            <path>/Tenderesslibertine\</path>
+            <path>/Tenderesslibertine</path>
           </configuration>
         </plugin>
 

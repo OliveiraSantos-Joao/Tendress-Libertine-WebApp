@@ -1,0 +1,4 @@
+org/TenderessLibertine/SpringBootstrap.class
+org/TenderessLibertine/controllers/rest/TestControler.class
+org/TenderessLibertine/dtos/CustomerDto.class
+org/TenderessLibertine/persistence/model/Customer.class
