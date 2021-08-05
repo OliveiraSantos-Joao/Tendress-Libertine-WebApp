@@ -1,11 +1,22 @@
 package org.TenderessLibertine.persistence.model;
 
-public class Customer {
 
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.*;
+
+@Repository
+@Entity
+@Table(name = "customers")
+public class Customer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
     String localization;
     String nickName;
     String email;
+    int password;
 
 
     public int getId() {
