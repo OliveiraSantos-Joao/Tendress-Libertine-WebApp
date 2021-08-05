@@ -1,18 +1,20 @@
 package org.TenderessLibertine.persistence.model;
 
+
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.*;
 
-@Repository
-@Entity
-@Table(name = "hotel")
 public class Hotel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
 
+    public Hotel(int id, String hotelName, int latitude, int longitude) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.hotelName = hotelName;
+    }
+
+    int id;
     int latitude;
     int longitude;
     String hotelName;
