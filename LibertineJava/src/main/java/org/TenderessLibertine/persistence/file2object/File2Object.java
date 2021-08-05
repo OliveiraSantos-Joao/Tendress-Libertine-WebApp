@@ -1,3 +1,4 @@
+/*
 package org.TenderessLibertine.persistence.file2object;
 
 import org.TenderessLibertine.persistence.model.Customer;
@@ -86,7 +87,8 @@ public class File2Object {
         return null;
     }
 
-   /* private Customer getCustomer(int pass, String email) {
+   */
+/* private Customer getCustomer(int pass, String email) {
 
         try {
 
@@ -112,7 +114,8 @@ public class File2Object {
         }
 
         return null;
-    }*/
+    }*//*
+
 
     private int getNextCustomerId() {
         try {
@@ -156,3 +159,4 @@ public class File2Object {
 
 
 }
+*/

@@ -1,6 +1,14 @@
+org/TenderessLibertine/persistence/dao/jpa/GenericJpaDao.class
+org/TenderessLibertine/services/CustomerService.class
+org/TenderessLibertine/dto/CustomerDto.class
+org/TenderessLibertine/persistence/model/AbstractModel.class
+org/TenderessLibertine/testes.class
+org/TenderessLibertine/persistence/dao/jpa/JpaCustomerDao.class
+org/TenderessLibertine/persistence/dao/Dao.class
 org/TenderessLibertine/SpringBootstrap.class
-org/TenderessLibertine/dtos/CustomerDto.class
-org/TenderessLibertine/dtos/HotelDto.class
+org/TenderessLibertine/persistence/dao/CustomerDao.class
+org/TenderessLibertine/controllers/rest/CustomerController.class
 org/TenderessLibertine/controllers/rest/TestControler.class
+org/TenderessLibertine/persistence/model/Model.class
 org/TenderessLibertine/persistence/model/Customer.class
 org/TenderessLibertine/persistence/model/Hotel.class

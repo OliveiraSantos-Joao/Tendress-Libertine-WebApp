@@ -1,9 +1,6 @@
 package org.TenderessLibertine.persistence.model;
 
 
-import org.springframework.stereotype.Repository;
-
-
 public class Hotel {
 
 

@@ -1,33 +1,18 @@
 package org.TenderessLibertine.persistence.model;
 
 
+import javax.persistence.*;
 
-public class Customer {
+@Entity
+@Table(name = "customers")
+public class Customer extends AbstractModel {
 
+    public Customer() {}
 
-    public Customer(int id, String nickName, int password, String email, int matchedWithId, int hotelId) {
-        this.id = id;
-        this.nickName = nickName;
-        this.email = email;
-        this.password = password;
-        this.matchedWithId = matchedWithId;
-        this.hotelId = hotelId;
-    }
-
-    private int id;
+    @Column(name = "nickname")
     private String nickName;
     private String email;
     private int password;
-
-    public int getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(int hotelId) {
-        this.hotelId = hotelId;
-    }
-
-    private int hotelId;
 
     public int getPassword() {
         return password;
@@ -35,25 +20,6 @@ public class Customer {
 
     public void setPassword(int password) {
         this.password = password;
-    }
-
-    public int getMatchedWithId() {
-        return matchedWithId;
-    }
-
-    public void setMatchedWithId(int matchedWithId) {
-        this.matchedWithId = matchedWithId;
-    }
-
-    private int matchedWithId; //-1 no one
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNickName() {
