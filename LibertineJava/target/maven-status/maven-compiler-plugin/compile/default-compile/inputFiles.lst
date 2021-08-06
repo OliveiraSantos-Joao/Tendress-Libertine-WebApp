@@ -1,4 +1,5 @@
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/exceptions/CustomerNotFoundException.java
+/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/dto/CustomerLoginDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/CustomerServiceImpl.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/CustomerDao.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/Validations.java
@@ -9,6 +10,7 @@
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/model/Customer.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/dto/HotelDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/model/Hotel.java
+/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/dto/CreditCardDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/converters/CustomerToCustomerDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/converters/AbstractConverter.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/exceptions/TransactionInvalidException.java
@@ -22,14 +24,17 @@
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/dto/CustomerDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/jpa/GenericJpaDao.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/model/Model.java
+/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/RandomServiceImpl.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/testes.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/converters/HotelDtoToHotel.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/exceptions/AssociationExistsException.java
+/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/controllers/web/teste.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/converters/DateToDateDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/converters/DateDtoToDate.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/HotelService.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/jpa/JpaHotelDao.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/Dao.java
+/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/RandomService.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/jpa/DateDao.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/model/AbstractModel.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/model/Date.java

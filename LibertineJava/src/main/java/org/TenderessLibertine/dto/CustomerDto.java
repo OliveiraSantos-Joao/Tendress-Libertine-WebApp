@@ -21,15 +21,15 @@ public class CustomerDto {
     @NotNull(message = "Password is mandatory")
     @NotBlank(message = "Password is mandatory")
     @Size(min = 5, max = 64)
-    private Integer password;
+    private String password;
 
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
-        this.password = password;
+    public void setPassword(String password) {
+        this.password = password.hashCode()+"";
     }
 
     public Integer getId() {

@@ -8,7 +8,12 @@ import javax.persistence.Table;
 @Table(name = "dates")
 public class Date extends AbstractModel {
 
-    public Date() {
+    public Date() {}
+
+    public Date(int idCustomer1, int idCustomer2, String hotelName) {
+        this.idCustomer1 = idCustomer1;
+        this.idCustomer2 = idCustomer2;
+        this.hotelName = hotelName;
     }
 
     private int idCustomer1;
