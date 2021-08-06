@@ -52,7 +52,10 @@ public class CustomerServiceImpl implements CustomerService {
 
         List<Customer> customerList = list();
 
+
         for(Customer c : customerList){
+            System.out.println(c.getEmail() + " -> " + customerLoginDto.getEmail());
+            System.out.println(c.getPassword() + " -> " + customerLoginDto.getPassword());
             if(c.getEmail().equals(customerLoginDto.getEmail()) && c.getPassword().equals(customerLoginDto.getPassword())){
                 return c;
             }

@@ -10,5 +10,6 @@ public interface HotelService {
 
     Hotel get(Integer id);
 
+    Hotel getHotelByName(String name);
 
 }

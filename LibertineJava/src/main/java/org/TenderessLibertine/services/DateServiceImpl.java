@@ -3,6 +3,7 @@ package org.TenderessLibertine.services;
 import org.TenderessLibertine.exceptions.AssociationExistsException;
 import org.TenderessLibertine.exceptions.CustomerNotFoundException;
 import org.TenderessLibertine.persistence.dao.jpa.DateDao;
+import org.TenderessLibertine.persistence.model.Customer;
 import org.TenderessLibertine.persistence.model.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class DateServiceImpl implements DateService {
 
     @Override
     public List<Date> list() {
-       return dateDao.findAll();
+        return dateDao.findAll();
     }
 
     @Override
@@ -37,6 +38,104 @@ public class DateServiceImpl implements DateService {
     @Override
     public void delete(Integer id) throws AssociationExistsException, CustomerNotFoundException, AssociationExistsException, CustomerNotFoundException {
         dateDao.delete(id);
+    }
+
+    @Override
+    public int getCustomer1ByDate(Integer id) {
+
+        List<Date> dates = list();
+
+        for (Date date : dates) {
+
+            int customer1 = date.getIdCustomer1();
+            int customer2 = date.getIdCustomer2();
+
+            if (customer1 == id) {
+                return id;
+            }
+
+
+        }
+        return -1;
+
+    }
+
+    @Override
+    public int getCustomer2ByDate(Integer id) {
+
+        List<Date> dates = list();
+
+        for (Date date : dates) {
+
+            int customer2 = date.getIdCustomer2();
+
+            if (customer2 == id) {
+                return id;
+            }
+
+        }
+        return -1;
+
+    }
+    @Override
+    public String getHotelById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public String getHotelByCustomerId(Integer id) {
+
+        List<Date> dates = list();
+
+        int customerId = -1;
+        String hotelName = null;
+        for (Date date : dates) {
+
+            int customer1 = date.getIdCustomer1();
+            int customer2 = date.getIdCustomer2();
+            hotelName = date.getHotelName();
+
+            if (customer1 == id) {
+                customerId = id;
+                break;
+            }
+            if (customer2 == id) {
+                customerId = id;
+                break;
+            }
+
+        }
+
+        return hotelName;
+    }
+
+    @Override
+    public Date getDateBtCustomer1(Integer id) {
+        List<Date> dates = list();
+
+        int customerId = -1;
+        String hotelName = null;
+
+        for (Date date : dates) {
+
+            int customer1 = date.getIdCustomer1();
+            int customer2 = date.getIdCustomer2();
+
+            hotelName = date.getHotelName();
+
+            if (customer1 == id) {
+                return date;
+
+            }
+            if (customer2 == id) {
+                return date;
+
+            }
+
+        }
+
+        return null;
+
     }
 
 

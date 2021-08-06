@@ -26,4 +26,16 @@ public class HotelServiceImpl implements HotelService {
     public Hotel get(Integer id) {
         return hotelDao.findById(id);
     }
+
+    @Override
+    public Hotel getHotelByName(String hotelName) {
+        List<Hotel> hotels = list();
+
+        for (Hotel hotel : hotels){
+            if(hotel.getHotelName().equals(hotelName)){
+                return hotel;
+            }
+        }
+        return null;
+    }
 }

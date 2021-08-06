@@ -2,6 +2,7 @@ package org.TenderessLibertine.persistence.dao.jpa;
 
 import org.TenderessLibertine.persistence.dao.Dao;
 import org.TenderessLibertine.persistence.model.Model;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -66,6 +67,7 @@ public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
      * @see Dao#saveOrUpdate(Model)
      */
     @Override
+    @Transactional
     public T saveOrUpdate(T modelObject) {
         return em.merge(modelObject);
     }

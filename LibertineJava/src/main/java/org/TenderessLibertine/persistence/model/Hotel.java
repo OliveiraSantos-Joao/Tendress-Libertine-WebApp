@@ -1,5 +1,7 @@
 package org.TenderessLibertine.persistence.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 
@@ -14,6 +16,16 @@ public class Hotel extends AbstractModel {
     Double longitude;
     String hotelName;
 
+    public String getLink2Pick() {
+        return link2Pick;
+    }
+
+    String link2Pick;
+
+    @Autowired
+    public void setLink2Pick(String link2Pick) {
+        this.link2Pick = link2Pick;
+    }
 
     public double getLatitude() {
         return latitude;

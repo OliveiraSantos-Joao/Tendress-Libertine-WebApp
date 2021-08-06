@@ -71,18 +71,23 @@
             text-decoration: none;
         }
 
+        #hotelpic{
+            height:450px;
+            width: 450px;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="d-flex justify-content-center h-100">
                 <div class="card-body">
-                    <h1>Hello <span th:text="${customer1.username}"></span></h1>
+                    <h1>Hello <span th:text="${customer.nickName}"></span></h1>
 
                     <div>
                         <br>
                         <p style="font-size: 20px">
-                            <a id="link" href="choiceDone.html">Welcome to Tendreness Libertine.</a>
+                            <a id="link"  th:href="@{'/matched'+${customer.getId()}}" target="_self" method="GET">Welcome to Tendreness Libertine.</a>
                         </p>
                         <br>
                     </div>
@@ -95,17 +100,17 @@
                     <div id="row">
                         <div class="match">
                             <div class="pictures">
-                            <img class ="imgradius" src="woman.png" alt="person">
+                            <img class ="imgradius" src="https://cdni.iconscout.com/illustration/premium/thumb/portrait-style-girl-young-women-fashion-with-tropical-plants-1737973-1479030.png" alt="person">
                             </div>
                         </div>
 
                         <div class="pictures">
-                            <p id="timeAwait"> 09:30 </p>
+                            <p id="timeAwait"> 19:30 </p>
                         </div>
 
                         <div class="match">
                             <div class="pictures">
-                            <img class="imgradius" src="woman.png" alt="hotel">
+                            <img  id="hotelpic" class="imgradius" src="https://media-cdn.tripadvisor.com/media/photo-p/14/31/6d/4b/photo0jpg.jpg" alt="hotel">
                             </div>
                         </div>
                     </div>

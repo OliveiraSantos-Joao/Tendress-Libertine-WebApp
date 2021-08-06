@@ -6,7 +6,10 @@ import org.TenderessLibertine.dto.CreditCardDto;
 import org.TenderessLibertine.dto.CustomerDto;
 import org.TenderessLibertine.dto.CustomerLoginDto;
 import org.TenderessLibertine.persistence.model.Customer;
+import org.TenderessLibertine.persistence.model.Date;
 import org.TenderessLibertine.services.CustomerService;
+import org.TenderessLibertine.services.DateService;
+import org.TenderessLibertine.services.HotelService;
 import org.TenderessLibertine.services.RandomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +31,18 @@ public class SiteControler {
     private CustomerService customerService;
     private CustomerDtoToCustomer customerDtoToCustomer;
     private RandomService randomService;
+    private DateService dateService;
+    private HotelService hotelService;
+
+    @Autowired
+    public void setHotelService(HotelService hotelService) {
+        this.hotelService = hotelService;
+    }
+
+    @Autowired
+    public void setDateService(DateService dateService) {
+        this.dateService = dateService;
+    }
 
     @Autowired
     public void setRandomService(RandomService randomService) {
@@ -49,6 +64,7 @@ public class SiteControler {
         return "FrontPage";
     }
 
+
     @RequestMapping(method = RequestMethod.GET, path = {"/login"})
     public String logIn(Model model) {
 
@@ -57,45 +73,53 @@ public class SiteControler {
     }
 
 
-
     @RequestMapping(method = RequestMethod.POST, path = {"/login"})
-    public String loggedIn(@ModelAttribute("customer") CustomerLoginDto customerLoginDto, RedirectAttributes redirectAttributes) {
+    public String loggedIn(@Valid @ModelAttribute("customer") CustomerLoginDto customerLoginDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            System.out.println("binding sout");
+            return "redirect:/login";
+        }
+
 
         Customer customer2Login = customerService.customerValidation(customerLoginDto);
         if (customer2Login == null) {
-            return "LoginRegisterButton";
+            System.out.println(customerLoginDto + "pixa");
+            return "redirect:/";
         }
 
         redirectAttributes.addFlashAttribute("lastAction", "Saved ");
+        System.out.println(customer2Login);
         return "redirect:/UserPage" + customer2Login.getId();
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/RegisterPage"})
     public String register(Model model) {
 
-        model.addAttribute("customer" , new CustomerDto());
+        model.addAttribute("customer", new CustomerDto());
 
         return "RegisterPage";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/RegisterPage"}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/RegisterPage"})
     public String saveCustomer(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        if (bindingResult.hasErrors()) {
+        /*if (bindingResult.hasErrors()) {
             return "RegisterPage";
-        }
+        }*/
 
         Customer savedCustomer = customerService.save(customerDtoToCustomer.convert(customerDto));
 
         redirectAttributes.addFlashAttribute("lastAction", "Registered");
+
         return "redirect:/UserPage" + savedCustomer.getId();
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/userPage{id}", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/UserPage{id}"})
     public String UserPage(@PathVariable Integer id, Model model) {
 
-        model.addAttribute("customer",customerService.get(id));
+        model.addAttribute("customer", customerService.get(id));
 
         return "UserPage";
     }
@@ -104,23 +128,49 @@ public class SiteControler {
     @RequestMapping(method = RequestMethod.GET, path = {"/payment"})
     public String payment(Model model) {
 
-        model.addAttribute("card",new CreditCardDto());
+        model.addAttribute("card", new CreditCardDto());
 
         return "PaymentPage";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/payement"}, params = "action=save")
+    @RequestMapping(method = RequestMethod.POST, path = {"/payment"})
     public String validatePayment(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        if (bindingResult.hasErrors()) {
-            return "PaymentPage";
-        }
+
 
 
         return "redirect:/RegisterPage";
     }
 
 
+    @RequestMapping(method = RequestMethod.GET, path = {"/matched{id}"})
+    public String matchFinal(@PathVariable int id, Model model) {
 
+        randomService.getRandomMatches();
+
+        customerService.get(dateService.getCustomer1ByDate(id));
+
+        Date date = dateService.getDateBtCustomer1(id);
+
+        try{
+            model.addAttribute("customer1", customerService.get(date.getIdCustomer1()));
+            model.addAttribute("customer2", customerService.get(date.getIdCustomer2()));
+            model.addAttribute("hotel",hotelService.getHotelByName(dateService.getHotelByCustomerId(id)));
+
+            return "choiceDone";
+        }catch(NullPointerException e){
+            return "redirect:noMatchFound" + id;
+        }
+
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/noMatchedFound{id}"})
+    public String noMatchFound(@PathVariable int id, Model model) {
+
+            model.addAttribute("customer1", customerService.get(id));
+
+           return "noMatchFound";
+
+    }
 
 }

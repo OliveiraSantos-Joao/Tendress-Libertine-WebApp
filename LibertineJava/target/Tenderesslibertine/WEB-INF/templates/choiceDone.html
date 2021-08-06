@@ -66,13 +66,20 @@
             display: flex;
             justify-content: center;
         }
+
+
+        #hotelpic{
+            height:450px;
+            width: 450px;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <div class="d-flex justify-content-center h-100">
         <div class="card-body">
-            <h1>Hello <span th:text="${customer1.username}"></span></h1>
+            <h1>Hello <span th:text="${customer1.nickName}"></span></h1>
 
             <div>
                 <br>
@@ -90,10 +97,10 @@
             <div id="row">
                 <div class="match">
                     <div class="names">
-                        <p th:text="${customer1.username}"></p>
+                        <p th:text="${customer2.nickName}"></p>
                     </div>
                     <div class="pictures">
-                        <img class ="imgradius" src="woman.png" alt="person">
+                        <img class ="imgradius" src="https://cdni.iconscout.com/illustration/premium/thumb/portrait-style-girl-young-women-fashion-with-tropical-plants-1737973-1479030.png" alt="person">
                     </div>
                 </div>
 
@@ -103,10 +110,10 @@
 
                 <div class="match">
                     <div class="names">
-                        <p th:text="${customer2.username}"></p>
+                        <p th:text="${hotel.getHotelName()}"></p>
                     </div>
                     <div class="pictures">
-                        <img class="imgradius" src="woman.png" alt="hotel">
+                        <img  id="hotelpic" class="imgradius" th:src="${hotel.getLink2Pick()}">
                     </div>
                 </div>
             </div>

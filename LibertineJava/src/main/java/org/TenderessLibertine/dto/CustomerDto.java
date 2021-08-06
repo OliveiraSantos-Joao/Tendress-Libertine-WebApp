@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 public class CustomerDto {
 
 
-    private int id;
+    private Integer id;
 
     @NotNull(message = "Nickname is mandatory")
     @NotBlank(message = "Nickname is mandatory")
@@ -29,14 +29,14 @@ public class CustomerDto {
     }
 
     public void setPassword(String password) {
-        this.password = password.hashCode()+"";
+        this.password = password;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

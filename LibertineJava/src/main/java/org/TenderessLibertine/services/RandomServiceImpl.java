@@ -52,11 +52,12 @@ public class RandomServiceImpl implements RandomService {
         int randCustomer2 = 1;
 
         while (randCustomer2 == randCustomer1) {
-            randCustomer1 = random.nextInt(customers.size());
-            randCustomer2 = random.nextInt(customers.size());
+            randCustomer1 = random.nextInt(customers.size())+1;
+            randCustomer2 = random.nextInt(customers.size())+1;
         }
 
         int randHotelId = random.nextInt(hotelService.list().size());
+
         String hotelName = hotelService.list().get(randHotelId).getHotelName();
 
         dateService.save(new Date(randCustomer1, randCustomer2, hotelName));

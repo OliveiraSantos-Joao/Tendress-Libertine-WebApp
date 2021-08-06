@@ -2,8 +2,6 @@
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/dto/CustomerLoginDto.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/CustomerServiceImpl.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/CustomerDao.java
-/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/Validations.java
-/Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/services/RandomSelection.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/persistence/dao/jpa/HotelDao.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/SpringBootstrap.java
 /Users/codecadet/Desktop/Hecaton/tenderesslibertine/LibertineJava/src/main/java/org/TenderessLibertine/errors/ErrorMessage.java

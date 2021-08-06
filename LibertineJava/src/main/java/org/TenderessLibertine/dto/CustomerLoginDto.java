@@ -28,6 +28,6 @@ public class CustomerLoginDto {
     }
 
     public void setPassword(String password) {
-        this.password = password.hashCode()+"";
+        this.password = password;
     }
 }
