@@ -14,6 +14,7 @@ org/TenderessLibertine/controllers/web/SiteControler.class
 org/TenderessLibertine/converters/AbstractConverter.class
 org/TenderessLibertine/persistence/model/Model.class
 org/TenderessLibertine/persistence/model/Customer.class
+org/TenderessLibertine/services/RandomService.class
 org/TenderessLibertine/services/HotelServiceImpl.class
 org/TenderessLibertine/converters/DateDtoToDate.class
 org/TenderessLibertine/exceptions/AssociationExistsException.class
@@ -32,6 +33,10 @@ org/TenderessLibertine/services/DateService.class
 org/TenderessLibertine/converters/HotelToHotelDto.class
 org/TenderessLibertine/exceptions/CustomerNotFoundException.class
 org/TenderessLibertine/errors/ErrorMessage.class
+org/TenderessLibertine/dto/CreditCardDto.class
+org/TenderessLibertine/controllers/web/teste.class
+org/TenderessLibertine/dto/CustomerLoginDto.class
 org/TenderessLibertine/dto/HotelDto.class
 org/TenderessLibertine/converters/DateToDateDto.class
 org/TenderessLibertine/persistence/model/Hotel.class
+org/TenderessLibertine/services/RandomServiceImpl.class

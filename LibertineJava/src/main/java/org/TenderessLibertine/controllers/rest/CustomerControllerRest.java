@@ -102,14 +102,13 @@ public class CustomerControllerRest {
         //return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
     }
 
+
    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<CustomerDto>> listCustomers() {
 
         List<CustomerDto> customerDtos = customerService.list().stream()
                 .map(customer -> customerToCustomerDto.convert(customer))
                 .collect(Collectors.toList());
-
-
 
         return new ResponseEntity<>(customerDtos, HttpStatus.OK);
     }
@@ -124,4 +123,7 @@ public class CustomerControllerRest {
 
         return new ResponseEntity<>(hotelsDtos, HttpStatus.OK);
     }
+
+
+
 }

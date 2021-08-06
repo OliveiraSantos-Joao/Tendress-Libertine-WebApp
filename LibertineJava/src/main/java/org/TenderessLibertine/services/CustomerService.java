@@ -1,5 +1,6 @@
 package org.TenderessLibertine.services;
 
+import org.TenderessLibertine.dto.CustomerLoginDto;
 import org.TenderessLibertine.exceptions.AssociationExistsException;
 import org.TenderessLibertine.exceptions.CustomerNotFoundException;
 import org.TenderessLibertine.persistence.model.Customer;
@@ -18,5 +19,6 @@ public interface CustomerService {
 
     Customer get(Integer id);
 
+    Customer customerValidation(CustomerLoginDto customerLoginDto);
 
 }

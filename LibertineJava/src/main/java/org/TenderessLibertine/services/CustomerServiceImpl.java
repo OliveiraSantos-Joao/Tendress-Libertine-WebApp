@@ -1,6 +1,8 @@
 package org.TenderessLibertine.services;
 
 
+import org.TenderessLibertine.dto.CustomerDto;
+import org.TenderessLibertine.dto.CustomerLoginDto;
 import org.TenderessLibertine.exceptions.AssociationExistsException;
 import org.TenderessLibertine.exceptions.CustomerNotFoundException;
 import org.TenderessLibertine.persistence.dao.CustomerDao;
@@ -42,6 +44,20 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<Customer> list() {
         return customerDao.findAll();
+    }
+
+
+
+    public Customer customerValidation(CustomerLoginDto customerLoginDto){
+
+        List<Customer> customerList = list();
+
+        for(Customer c : customerList){
+            if(c.getEmail().equals(customerLoginDto.getEmail()) && c.getPassword().equals(customerLoginDto.getPassword())){
+                return c;
+            }
+        }
+        return null;
     }
 
 }
