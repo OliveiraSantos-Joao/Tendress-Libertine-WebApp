@@ -11,6 +11,7 @@
     <link href=“https://fonts.googleapis.com/css2?family=Open+Sans&display=swap” rel=“stylesheet2”>
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet3' type='text/css'>
     <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
     <style>
         html , body {
             background-image: url("https://www.linkpicture.com/q/BackgroundImg.jpg");
@@ -65,54 +66,54 @@
             display: flex;
             justify-content: center;
         }
-
-        #link{
-            color: white;
-            text-decoration: none;
-        }
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="d-flex justify-content-center h-100">
-                <div class="card-body">
-                    <h1>Hello <span th:text="${customer1.username}"></span></h1>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card-body">
+            <h1>Hello <span th:text="${customer1.username}"></span></h1>
 
-                    <div>
-                        <br>
-                        <p style="font-size: 20px">
-                            <a id="link" href="choiceDone.html">Welcome to Tendreness Libertine.</a>
-                        </p>
-                        <br>
+            <div>
+                <br>
+                <p style="font-size: 20px">
+                    Welcome to Tendreness Libertine.
+                </p>
+                <br>
+            </div>
+
+            <div>
+                <p style="font-size: 20px">Our Randomizer has done his business  and here is our draft:</p>
+                <br>
+            </div>
+
+            <div id="row">
+                <div class="match">
+                    <div class="names">
+                        <p th:text="${customer1.username}"></p>
                     </div>
-
-                    <div>
-                        <p style="font-size: 20px">Our Randomizer has done his business  and here is our draft:</p>
-                        <br>
+                    <div class="pictures">
+                        <img class ="imgradius" src="woman.png" alt="person">
                     </div>
-
-                    <div id="row">
-                        <div class="match">
-                            <div class="pictures">
-                            <img class ="imgradius" src="woman.png" alt="person">
-                            </div>
-                        </div>
-
-                        <div class="pictures">
-                            <p id="timeAwait"> 09:30 </p>
-                        </div>
-
-                        <div class="match">
-                            <div class="pictures">
-                            <img class="imgradius" src="woman.png" alt="hotel">
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="pictures">
+                    <p id="timeAwait"> 09:30 </p>
+                </div>
+
+                <div class="match">
+                    <div class="names">
+                        <p th:text="${customer2.username}"></p>
+                    </div>
+                    <div class="pictures">
+                        <img class="imgradius" src="woman.png" alt="hotel">
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div>Size Maps</div>
     </div>
+    <div>Size Maps</div>
+</div>
 </body>
 </html>

@@ -28,7 +28,6 @@ public class SiteControler {
     }
 
 
-
     @RequestMapping(method = RequestMethod.GET, path = {"/3",""})
     public String HomePage1() {
         return "RegisterPage";

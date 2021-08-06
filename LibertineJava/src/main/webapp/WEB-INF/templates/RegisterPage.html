@@ -33,6 +33,21 @@
             background-color: #312f2f;
             border-radius: 20px;
         }
+
+        #location{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #place{
+            width: 47%;
+        }
+
+        #zipcode{
+            width: 47%;
+            justify-content: right;
+        }
+
     </style>
 </head>
 
@@ -44,7 +59,7 @@
                 <h3>Create account</h3>
             </div>
             <div id="yo" class="card-body">
-                <form>
+                <form th:object="${customer}" th:action="@{/customer}" method="post">
                     <!-- <label>Username</label> -->
 
                     <div class="input-group form-group">
@@ -52,7 +67,7 @@
                                                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                                                 </div>
                         <input type="text" class="form-control" placeholder="username">
-
+                        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Please insert a valid username!</span>
                     </div>
                     <br>
                     <!-- <label>Email</label> -->
@@ -61,7 +76,7 @@
                                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                                </div>
                         <input type="email" class="form-control" placeholder="email">
-
+                        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Please insert a valid email!</span>
                     </div>
                     
                     <br>
@@ -72,7 +87,49 @@
                                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                                </div>
                         <input type="password" class="form-control" placeholder="password">
+                        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Please insert a valid password!</span>
                     </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-card"></i></span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="card number">
+                    </div>
+
+                    <div id="location" class="input-group form-group">
+                        <div id="place" class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-home"></i></span>
+                            <select name='expireMM' id='expireMM'>
+                                <option value=''>Month</option>
+                                <option value='01'>January</option>
+                                <option value='02'>February</option>
+                                <option value='03'>March</option>
+                                <option value='04'>April</option>
+                                <option value='05'>May</option>
+                                <option value='06'>June</option>
+                                <option value='07'>July</option>
+                                <option value='08'>August</option>
+                                <option value='09'>September</option>
+                                <option value='10'>October</option>
+                                <option value='11'>November</option>
+                                <option value='12'>December</option>
+                            </select>
+                            <select name='expireYY' id='expireYY'>
+                                <option value=''>Year</option>
+                                <option value='20'>2022</option>
+                                <option value='21'>2023</option>
+                                <option value='22'>2024</option>
+                                <option value='23'>2025</option>
+                                <option value='24'>2026</option>
+                            </select>
+                            <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
+                        </div>
+                        <div id="zipcode" class="input-group-prepend">
+                            <span><h3>1000$</h3></span>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <input id="button" type="submit" value="Register" style="color: black" class="btn float-right login_btn">
                     </div>
