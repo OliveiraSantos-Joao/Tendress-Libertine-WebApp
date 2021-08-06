@@ -1,5 +1,5 @@
  html, body{
-    background-image: url("/resources/img/BackgroundImg.jpg");
+    background-image: url("BackgroundImg.jpg");
     height: 100%;
     color: white;
     background-position: center;
