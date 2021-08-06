@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>JavaBank</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          modelType="text/css"/>
+    <link rel=“preconnect” href=“https://fonts.googleapis.com”>
+    <link rel=“preconnect” href=“https://fonts.gstatic.com” crossorigin>
+    <link href=“https://fonts.googleapis.com/css2?family=Open+Sans&display=swap” rel=“stylesheet2”>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet3' type='text/css'>
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+        html , body {
+            background-image: url("https://www.linkpicture.com/q/BackgroundImg.jpg");
+            height: 100% ;
+            background-position: center;
+            background-repeat: repeat-y;
+            background-size: cover;
+            position: relative;
+            font-family: 'Lato', sans-serif;
+        }
+        #row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+        .divz {
+            margin: 10%;
+        }
+        .d-flex {
+            background-color: transparent;
+            color: white;
+        }
+        .card-body {
+            color: white;
+            margin: 5%;
+        }
+        .imgradius {
+            border-radius: 100%;
+            padding: 10px;
+        }
+        #timeAwait {
+            font-size: 50px;
+            margin-top: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .match{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .names{
+            display: flex;
+            justify-content: center;
+        }
+
+        .pictures{
+            display: flex;
+            justify-content: center;
+        }
+
+        #link{
+            color: white;
+            text-decoration: none;
+        }
+
+        #hotelpic{
+            height:450px;
+            width: 450px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+                <div class="card-body">
+                    <h1>Hello <span th:text="${customer.nickName}"></span></h1>
+
+                    <div>
+                        <br>
+                        <p style="font-size: 20px">
+                            <a id="link"  th:href="@{'/matched'+${customer.getId()}}" target="_self" method="GET">Welcome to Tendreness Libertine.</a>
+                        </p>
+                        <br>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 20px">Our Randomizer has done his business  and here is our draft:</p>
+                        <br>
+                    </div>
+
+                    <div id="row">
+                        <div class="match">
+                            <div class="pictures">
+                            <img class ="imgradius" src="https://cdni.iconscout.com/illustration/premium/thumb/portrait-style-girl-young-women-fashion-with-tropical-plants-1737973-1479030.png" alt="person">
+                            </div>
+                        </div>
+
+                        <div class="pictures">
+                            <p id="timeAwait"> 19:30 </p>
+                        </div>
+
+                        <div class="match">
+                            <div class="pictures">
+                            <img  id="hotelpic" class="imgradius" src="https://media-cdn.tripadvisor.com/media/photo-p/14/31/6d/4b/photo0jpg.jpg" alt="hotel">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        <div>Size Maps</div>
+    </div>
+</body>
+</html>
