@@ -30,7 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void delete(Integer id) throws AssociationExistsException, CustomerNotFoundException {
-
+        customerDao.delete(id);
     }
 
     @Override

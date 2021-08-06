@@ -1,4 +1,5 @@
 /*
+
 package org.TenderessLibertine.services;
 
 import org.TenderessLibertine.persistence.file2object.File2Object;
@@ -16,15 +17,8 @@ public class RandomSelection {
 
 
 
-    private File2Object file2Object;
-
-    @Autowired
-    public void setFile2Object(File2Object file2Object) {
-        this.file2Object = file2Object;
-    }
-
-
-    private final Random random = new Random();
+   */
+/* private final Random random = new Random();
 
 
     public void getRandomMatches() {
@@ -54,6 +48,8 @@ public class RandomSelection {
         return file2Object.gethotelsArray().get(random.nextInt(file2Object.gethotelsArray().size())).getId();
     }
 
+*//*
 
 }
+
 */
