@@ -1,39 +1,22 @@
 package org.TenderessLibertine.services;
 
-
-import org.TenderessLibertine.persistence.dao.CustomerDao;
+import org.TenderessLibertine.exceptions.AssociationExistsException;
+import org.TenderessLibertine.exceptions.CustomerNotFoundException;
 import org.TenderessLibertine.persistence.model.Customer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
-public class CustomerService {
+public interface CustomerService {
 
-    private CustomerDao customerDao;
 
-    /**
-     * Sets the customer data access object
-     *
-     * @param customerDao the account DAO to set
-     */
-    @Autowired
-    public void setCustomerDao(CustomerDao customerDao) {
-        this.customerDao = customerDao;
-    }
+    Customer save(Customer customer);
 
-    /**
-     * @see CustomerService#save(Customer)
-     */
-    @Transactional
-    public Customer save(Customer customer) {
-        return customerDao.saveOrUpdate(customer);
-    }
+    void delete(Integer id) throws AssociationExistsException, CustomerNotFoundException, AssociationExistsException, CustomerNotFoundException;
 
-    public List<Customer> list() {
-        return customerDao.findAll();
-    }
+
+    List<Customer> list();
+
+    Customer get(Integer id);
+
 
 }

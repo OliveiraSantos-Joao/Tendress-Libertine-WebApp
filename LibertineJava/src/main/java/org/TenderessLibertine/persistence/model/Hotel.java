@@ -1,42 +1,33 @@
 package org.TenderessLibertine.persistence.model;
 
+import javax.persistence.*;
 
-public class Hotel {
 
+@Entity
+@Table(name = "hotels")
+public class Hotel extends AbstractModel {
 
-    public Hotel(int id, String hotelName, int latitude, int longitude) {
-        this.id = id;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.hotelName = hotelName;
+    public Hotel() {
     }
 
-    int id;
-    int latitude;
-    int longitude;
+    Double latitude;
+    Double longitude;
     String hotelName;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 

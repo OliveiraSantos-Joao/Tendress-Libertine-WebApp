@@ -10,9 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class JpaCustomerDao extends GenericJpaDao<Customer> implements CustomerDao {
 
-    /**
-     * @see GenericJpaDao#GenericJpaDao(Class)
-     */
+
     public JpaCustomerDao() {
         super(Customer.class);
     }

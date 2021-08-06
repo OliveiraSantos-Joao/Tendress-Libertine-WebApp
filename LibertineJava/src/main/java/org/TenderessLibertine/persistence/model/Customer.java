@@ -1,7 +1,7 @@
 package org.TenderessLibertine.persistence.model;
 
-
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "customers")
@@ -37,4 +37,7 @@ public class Customer extends AbstractModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+
 }
