@@ -106,14 +106,14 @@ public class SiteControler {
 
         model.addAttribute("card",new CreditCardDto());
 
-        return "paymentPage";
+        return "PaymentPage";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/payement"}, params = "action=save")
     public String validatePayment(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            return "paymentPage";
+            return "PaymentPage";
         }
 
 

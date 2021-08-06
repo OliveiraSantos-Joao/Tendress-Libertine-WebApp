@@ -49,6 +49,18 @@
             justify-content:flex-end;
         }
 
+        .cardatributtes{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        #cardNumber{
+           width:130%;
+            margin-right: 5%;
+        }
+
     </style>
 </head>
 
@@ -61,42 +73,22 @@
             </div>
             <div id="yo" class="card-body">
                 <form th:object="${customer}" th:action="@{/customer}" method="post">
-                    <!-- <label>Username</label> -->
+                    <div class="cardatributtes">
+                    <div id="cardNumber" class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="card number">
+                    </div>
 
-                    <div class="input-group form-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                                </div>
-                        <input type="text" class="form-control" placeholder="username">
-                        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Please insert a valid username!</span>
-                    </div>
-                    <br>
-                    <!-- <label>Email</label> -->
-                    <div class="input-group form-group">
-                                               <div class="input-group-prepend">
-                                                   <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                                               </div>
-                        <input type="email" class="form-control" placeholder="email">
-                        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Please insert a valid email!</span>
-                    </div>
-                    
-                    <br>
-                    <!-- <label>Password</label> -->
-
-                    <div class="input-group form-group">
-                                               <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                                               </div>
-                        <input type="password" class="form-control" placeholder="password">
-                        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Please insert a valid password!</span>
-                    </div>
-                    <br>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
                         </div>
-                        <input type="number" class="form-control" placeholder="card number">
+                        <input type="text" class="form-control" placeholder="CVV">
                     </div>
+                    </div>
+
                     <br>
                     <div id="location" class="input-group form-group">
                         <div id="place" class="input-group-prepend">
