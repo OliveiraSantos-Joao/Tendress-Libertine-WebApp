@@ -40,12 +40,13 @@
         }
 
         #place{
-            width: 47%;
+            width: 50%;
         }
 
         #zipcode{
             width: 47%;
-            justify-content: right;
+            display: flex;
+            justify-content:flex-end;
         }
 
     </style>
@@ -89,16 +90,17 @@
                         <input type="password" class="form-control" placeholder="password">
                         <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Please insert a valid password!</span>
                     </div>
+                    <br>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-card"></i></span>
+                            <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
                         </div>
                         <input type="number" class="form-control" placeholder="card number">
                     </div>
-
+                    <br>
                     <div id="location" class="input-group form-group">
                         <div id="place" class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-home"></i></span>
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                             <select name='expireMM' id='expireMM'>
                                 <option value=''>Month</option>
                                 <option value='01'>January</option>
@@ -114,7 +116,7 @@
                                 <option value='11'>November</option>
                                 <option value='12'>December</option>
                             </select>
-                            <select name='expireYY' id='expireYY'>
+                            <select name='expireYY' id='expireYY' style="width: 50%;">
                                 <option value=''>Year</option>
                                 <option value='20'>2022</option>
                                 <option value='21'>2023</option>
@@ -125,7 +127,9 @@
                             <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
                         </div>
                         <div id="zipcode" class="input-group-prepend">
-                            <span><h3>1000$</h3></span>
+                            <span style="background-color: white; border-radius: 4px; color: black;
+                            display: flex; justify-content: center; align-items: center ; font-size: 130% ; width: 39.50%">
+                                1000$</span>
                         </div>
                     </div>
 
