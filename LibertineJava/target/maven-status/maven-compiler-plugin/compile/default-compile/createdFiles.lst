@@ -24,6 +24,5 @@ org/TenderessLibertine/converters/HotelToHotelDto.class
 org/TenderessLibertine/exceptions/CustomerNotFoundException.class
 org/TenderessLibertine/errors/ErrorMessage.class
 org/TenderessLibertine/controllers/rest/CustomerController.class
-org/TenderessLibertine/controllers/rest/TestControler.class
 org/TenderessLibertine/dto/HotelDto.class
 org/TenderessLibertine/persistence/model/Hotel.class

@@ -87,7 +87,7 @@ public class CustomerController {
         //return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
     }
 
-   /* @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+   @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<CustomerDto>> listCustomers() {
 
         List<CustomerDto> customerDtos = customerService.list().stream()
@@ -98,9 +98,9 @@ public class CustomerController {
 
         return new ResponseEntity<>(customerDtos, HttpStatus.OK);
     }
-*/
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+
+  /*  @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<HotelDto>> listHotels() {
 
         List<HotelDto> hotelsDtos = hotelService.list().stream()
@@ -108,5 +108,5 @@ public class CustomerController {
                 .collect(Collectors.toList());
 
         return new ResponseEntity<>(hotelsDtos, HttpStatus.OK);
-    }
+    }*/
 }
