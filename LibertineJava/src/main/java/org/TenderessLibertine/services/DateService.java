@@ -18,6 +18,7 @@ public interface DateService {
     void delete(Integer id) throws AssociationExistsException, CustomerNotFoundException, AssociationExistsException, CustomerNotFoundException;
 
     int getCustomer1ByDate(Integer id);
+
     int getCustomer2ByDate(Integer id);
 
     String getHotelById(Integer id);
@@ -25,6 +26,8 @@ public interface DateService {
     String getHotelByCustomerId(Integer id);
 
     Date getDateBtCustomer1(Integer id);
+
+    Date getDateByCustomerId(Integer id);
 
 
 }

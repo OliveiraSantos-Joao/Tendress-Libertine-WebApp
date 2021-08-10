@@ -1,5 +1,5 @@
 INSERT INTO customers(ID, NICKNAME, PASSWORD, EMAIL)
-VALUES (1, 'Adrienne', '10517', 'Adrienne@gmail.com'),
+VALUES (1, 'xica', '11111', 'xica@gmail.com'),
        (2, 'Charlotte', '16098', 'Charlotte@gmail.com'),
        (3, 'Audrey', '49050', 'Audrey@gmail.com'),
        (4, 'Natalie', '40806', 'Natalie@gmail.com'),

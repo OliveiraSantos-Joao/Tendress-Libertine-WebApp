@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 
 public class CustomerLoginDto {
 
-    @Email
+    @Email()
     private String email;
 
     @NotNull(message = "Password is mandatory")

@@ -64,7 +64,6 @@ public class SiteControler {
         return "FrontPage";
     }
 
-
     @RequestMapping(method = RequestMethod.GET, path = {"/login"})
     public String logIn(Model model) {
 
@@ -72,20 +71,18 @@ public class SiteControler {
         return "LoginRegisterButton";
     }
 
-
     @RequestMapping(method = RequestMethod.POST, path = {"/login"})
     public String loggedIn(@Valid @ModelAttribute("customer") CustomerLoginDto customerLoginDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
-            System.out.println("binding sout");
             return "redirect:/login";
         }
 
 
         Customer customer2Login = customerService.customerValidation(customerLoginDto);
         if (customer2Login == null) {
-            System.out.println(customerLoginDto + "pixa");
-            return "redirect:/";
+
+            return "redirect:/login";
         }
 
         redirectAttributes.addFlashAttribute("lastAction", "Saved ");
@@ -104,9 +101,9 @@ public class SiteControler {
     @RequestMapping(method = RequestMethod.POST, path = {"/RegisterPage"})
     public String saveCustomer(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-        /*if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {
             return "RegisterPage";
-        }*/
+        }
 
         Customer savedCustomer = customerService.save(customerDtoToCustomer.convert(customerDto));
 
@@ -115,7 +112,6 @@ public class SiteControler {
         return "redirect:/UserPage" + savedCustomer.getId();
     }
 
-
     @RequestMapping(method = RequestMethod.GET, path = {"/UserPage{id}"})
     public String UserPage(@PathVariable Integer id, Model model) {
 
@@ -123,7 +119,6 @@ public class SiteControler {
 
         return "UserPage";
     }
-
 
     @RequestMapping(method = RequestMethod.GET, path = {"/payment"})
     public String payment(Model model) {
@@ -134,14 +129,16 @@ public class SiteControler {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/payment"})
-    public String validatePayment(@Valid @ModelAttribute("customer") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String validatePayment(@Valid @ModelAttribute("card") CreditCardDto card, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
-
+        if (bindingResult.hasErrors()) {
+            return "redirect:/payment";
+        }
+        redirectAttributes.addFlashAttribute("lastAction", "Done");
 
 
         return "redirect:/RegisterPage";
     }
-
 
     @RequestMapping(method = RequestMethod.GET, path = {"/matched{id}"})
     public String matchFinal(@PathVariable int id, Model model) {

@@ -10,15 +10,14 @@ public class CreditCardDto {
     @NotNull(message = "Card Number is mandatory")
     @NotBlank(message = "Card Number is mandatory")
     @Pattern(regexp = cardRegex, message = "Not a Valid Card")
-    @Positive
     private String cardNumber;
 
 
     private String date;
 
     @Positive
-    @NotNull
-    @NotBlank
+    @NotNull(message = "cvv is mandatory")
+  //@NotBlank
     @Max(3)
     @Min(3)
     private int cvv;

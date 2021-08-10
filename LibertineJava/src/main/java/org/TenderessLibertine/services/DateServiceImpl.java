@@ -77,6 +77,7 @@ public class DateServiceImpl implements DateService {
         return -1;
 
     }
+
     @Override
     public String getHotelById(Integer id) {
         return null;
@@ -138,5 +139,20 @@ public class DateServiceImpl implements DateService {
 
     }
 
+    @Override
+    public Date getDateByCustomerId(Integer id) {
+
+        List<Date> dateList = list();
+
+        for (Date date : dateList) {
+
+            if (date.getIdCustomer1() == id || date.getIdCustomer2() == id) {
+                return date;
+            }
+
+        }
+
+        return null;
+    }
 
 }
