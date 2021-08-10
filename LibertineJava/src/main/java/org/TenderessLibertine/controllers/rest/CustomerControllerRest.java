@@ -161,7 +161,6 @@ public class CustomerControllerRest {
 
 
 
-
     //register new customer
     @RequestMapping(method = RequestMethod.POST, path = {"/registerNewCustomer"})
     public ResponseEntity<?> registerCustomer(@Valid @RequestBody CustomerDto customerDto, BindingResult bindingResult, UriComponentsBuilder uriComponentsBuilder) {
