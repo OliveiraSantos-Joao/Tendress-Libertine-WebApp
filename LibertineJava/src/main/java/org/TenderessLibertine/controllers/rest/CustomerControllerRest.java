@@ -24,8 +24,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@CrossOrigin
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api")
 public class CustomerControllerRest {
 
@@ -169,6 +169,11 @@ public class CustomerControllerRest {
         if (bindingResult.hasErrors() || customerDto.getId() != null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+
+        if(!customerService.check4RepeatedEmail(customerDto)){
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+
 
         Customer savedCustomer = customerService.save(customerDtoToCustomer.convert(customerDto));
 

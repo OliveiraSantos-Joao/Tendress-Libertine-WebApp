@@ -47,20 +47,34 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 
-
-    public Customer customerValidation(CustomerLoginDto customerLoginDto){
+    public Customer customerValidation(CustomerLoginDto customerLoginDto) {
 
         List<Customer> customerList = list();
 
 
-        for(Customer c : customerList){
+        for (Customer c : customerList) {
             System.out.println(c.getEmail() + " -> " + customerLoginDto.getEmail());
             System.out.println(c.getPassword() + " -> " + customerLoginDto.getPassword());
-            if(c.getEmail().equals(customerLoginDto.getEmail()) && c.getPassword().equals(customerLoginDto.getPassword())){
+            if (c.getEmail().equals(customerLoginDto.getEmail()) && c.getPassword().equals(customerLoginDto.getPassword())) {
                 return c;
             }
         }
         return null;
+    }
+
+    @Override
+    public Boolean check4RepeatedEmail(CustomerDto customerDto) {
+
+        List<Customer> list = list();
+
+        for (Customer customer : list) {
+
+            if (customer.getEmail().equals(customerDto.getEmail())) {
+                return false;
+            }
+
+        }
+        return true;
     }
 
 }

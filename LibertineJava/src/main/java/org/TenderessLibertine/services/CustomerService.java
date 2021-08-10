@@ -1,5 +1,6 @@
 package org.TenderessLibertine.services;
 
+import org.TenderessLibertine.dto.CustomerDto;
 import org.TenderessLibertine.dto.CustomerLoginDto;
 import org.TenderessLibertine.exceptions.AssociationExistsException;
 import org.TenderessLibertine.exceptions.CustomerNotFoundException;
@@ -20,5 +21,7 @@ public interface CustomerService {
     Customer get(Integer id);
 
     Customer customerValidation(CustomerLoginDto customerLoginDto);
+
+    Boolean check4RepeatedEmail(CustomerDto customerDto);
 
 }
