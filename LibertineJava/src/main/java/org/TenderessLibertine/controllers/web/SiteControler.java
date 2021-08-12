@@ -61,7 +61,7 @@ public class SiteControler {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String FrontPage() {
-        return "FrontPage";
+        return "LoginPage";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/login"})

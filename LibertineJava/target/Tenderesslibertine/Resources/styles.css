@@ -1,0 +1,29 @@
+html, body{
+    background-image: url("https://www.linkpicture.com/q/BackgroundImg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: 'Lato',sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:white;
+    font-size: 20px;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;}
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 35px;}
+
+.navbar-expand-lg .navbar-collapse {
+    flex-direction: row-reverse;
+}
+
+.container{
+    color: white;
+    text-align: center;
+}

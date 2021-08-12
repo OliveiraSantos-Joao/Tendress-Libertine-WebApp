@@ -204,13 +204,13 @@ public class CustomerControllerRest {
         }
 
         // get help from the framework building the path for the newly created resource
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/customer/" + customer.getId()).build();
+        UriComponents uriComponents = uriComponentsBuilder.path("/UserPage" + customer.getId()).build();
 
         // set headers with the created path
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(uriComponents.toUri());
 
-        return new ResponseEntity<>(headers, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(headers.getLocation(), HttpStatus.ACCEPTED);
 
 
     }
